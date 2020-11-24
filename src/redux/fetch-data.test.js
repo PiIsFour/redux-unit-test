@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { getDataCount, dataCount } from './fetch-data';
+import { dataCount } from './fetch-data';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
