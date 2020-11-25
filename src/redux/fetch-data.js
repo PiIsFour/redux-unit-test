@@ -1,10 +1,4 @@
-export const getDataCount = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ total: 13 })
-    }, 100)
-  })
-}
+import { getDataCount } from './getDataCount'
 
 export const dataCount = () => {
   return async (dispatch) => {

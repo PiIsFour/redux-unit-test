@@ -1,10 +1,13 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { dataCount } from './fetch-data';
+import { getDataCount } from './getDataCount'
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 const store = mockStore();
+
+jest.mock('./getDataCount')
 
 describe('fetchData', () => {
   beforeEach(() => {
@@ -12,6 +15,7 @@ describe('fetchData', () => {
   });
 
   it('has the correct action and payload for dataCount', async () => {
+    getDataCount.mockResolvedValue({ total: 13 })
     const expectedActions = [
       {
         payload: { total: 13 },
